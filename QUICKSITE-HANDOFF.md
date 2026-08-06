@@ -123,4 +123,5 @@ Facebook groups Ηρακλείου. Ιδέα δομής: 40-60€ εφάπαξ s
 
 ---
 ## 10. Deploy log
-- 2026-08-06: Παραλήφθηκαν τα 3 αρχεία (handoff.md, master-template.html, quicksite-landing.html) σε νέο Cowork session. Ξεκίνησε deploy pipeline: GitHub repo `arisstei/quicksite.gr` (remote ήδη ρυθμισμένο), Vercel import σε εξέλιξη. Το `pelates_tracker.xlsx` ΔΕΝ ανέβηκε ακόμα σε αυτό το session.
+- 2026-08-06: Παραλήφθηκαν τα 3 αρχεία (handoff.md, master-template.html, quicksite-landing.html) σε νέο Cowork session. Τα αρχεία μπήκαν στο `E:\quick-site` (+ `index.html` = αντίγραφο landing page, + `demo/elina-kommotirio.html` = αντίγραφο master template). Έγινε πρώτο git commit τοπικά (`main` branch, remote `https://github.com/arisstei/quicksite.gr` ήδη ρυθμισμένο). **Push στο GitHub εκκρεμεί** — πρέπει να τρέξει ο χρήστης `git push -u origin main` από το δικό του PowerShell (δεν υπάρχουν GitHub credentials στο sandbox).
+- **ΕΠΙΒΕΒΑΙΩΘΗΚΕ ξανά η απόφαση της ενότητας 4**: το domain quicksite.gr ΔΕΝ θα συνδεθεί ακόμα. Vercel deploy θα γίνει μόνο σε *.vercel.app URL προς το παρόν, μέχρι να υπάρχουν 4-5 πραγματικά demo sites για portfolio. Το `pelates_tracker.xlsx` ΔΕΝ ανέβηκε ακόμα σε αυτό το session.
