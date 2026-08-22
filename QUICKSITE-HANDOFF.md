@@ -110,7 +110,9 @@ Facebook groups Ηρακλείου. Ιδέα δομής: 40-60€ εφάπαξ s
 - [ ] Deploy `master-template.html` demo σε πραγματικό πελάτη (πρώτος στόχος: Αναπολιωτάκης Νικόλαος)
 - [ ] Πρώτο πραγματικό outreach μήνυμα (κανένα δεν έχει σταλεί ακόμα)
 - [ ] Απόφαση για φορολογική/τιμολογιακή κατάσταση (μπλοκάκι/ελεύθερος επαγγελματίας) πριν την πρώτη πληρωμή
-- [ ] Deploy quicksite.gr σε Netlify/Vercel + σύνδεση domain (⚠️ ΣΚΟΠΙΜΑ σε αναμονή μέχρι να υπάρχουν 4-5 πραγματικά demos για portfolio)
+- [x] Deploy quicksite.gr σε Vercel — ✅ ΕΓΙΝΕ (2026-08-22), live στο `https://quicksite-gr.vercel.app`
+- [ ] Σύνδεση πραγματικού domain quicksite.gr (⚠️ ΣΚΟΠΙΜΑ σε αναμονή για 2 λόγους: (1) δεν υπάρχουν ακόμα 4-5 πραγματικά demos για portfolio, (2) **δεν έχει γίνει έναρξη επιτηδεύματος** — χωρίς αυτήν δεν βγαίνουν παραστατικά, οπότε δεν έχει νόημα να δέχεται το site πληρωμές/πελάτες)
+- [ ] Έναρξη επιτηδεύματος (μπλοκάκι/ελεύθερος επαγγελματίας) — προαπαιτούμενο πριν τη σύνδεση domain και την πρώτη πληρωμή
 - [ ] Στήσιμο email @quicksite.gr
 - [ ] Επέκταση έρευνας τεχνικών (περισσότεροι όροι αναζήτησης) ή έρευνα σε νέα κατηγορία (μακιγιέρ/νύχια)
 - [ ] "Cheat sheet" έτοιμων απαντήσεων σε συχνές αντιρρήσεις πελατών (προτάθηκε, δεν έχει φτιαχτεί ακόμα)
@@ -125,3 +127,5 @@ Facebook groups Ηρακλείου. Ιδέα δομής: 40-60€ εφάπαξ s
 ## 10. Deploy log
 - 2026-08-06: Παραλήφθηκαν τα 3 αρχεία (handoff.md, master-template.html, quicksite-landing.html) σε νέο Cowork session. Τα αρχεία μπήκαν στο `E:\quick-site` (+ `index.html` = αντίγραφο landing page, + `demo/elina-kommotirio.html` = αντίγραφο master template). Έγινε πρώτο git commit τοπικά (`main` branch, remote `https://github.com/arisstei/quicksite.gr` ήδη ρυθμισμένο). **Push στο GitHub εκκρεμεί** — πρέπει να τρέξει ο χρήστης `git push -u origin main` από το δικό του PowerShell (δεν υπάρχουν GitHub credentials στο sandbox).
 - **ΕΠΙΒΕΒΑΙΩΘΗΚΕ ξανά η απόφαση της ενότητας 4**: το domain quicksite.gr ΔΕΝ θα συνδεθεί ακόμα. Vercel deploy θα γίνει μόνο σε *.vercel.app URL προς το παρόν, μέχρι να υπάρχουν 4-5 πραγματικά demo sites για portfolio. Το `pelates_tracker.xlsx` ΔΕΝ ανέβηκε ακόμα σε αυτό το session.
+- 2026-08-22: Deploy ολοκληρώθηκε — GitHub push επιτυχές (μετά από fix: GH007 email privacy block, λύθηκε απενεργοποιώντας "Block command line pushes that expose my email" στο GitHub). Project `quicksite-gr` συνδέθηκε στο Vercel (team: arissteis-projects) μέσω official Vercel MCP integration, production deployment READY. **Live URL: `https://quicksite-gr.vercel.app`** (αυτόματο redeploy σε κάθε push στο `main`).
+  **ΔΙΕΥΚΡΙΝΙΣΗ ΓΙΑ ΤΟ DOMAIN quicksite.gr:** ο πραγματικός λόγος που δεν συνδέεται ακόμα δεν είναι μόνο η έλλειψη portfolio demos (ενότητα 4) — είναι κυρίως ότι **δεν έχει γίνει έναρξη επιτηδεύματος**. Χωρίς έναρξη δεν βγαίνουν παραστατικά/τιμολόγια, οπότε δεν έχει νόημα να είναι live το site με πελάτες πριν γίνει αυτό. Πρόσθεσε ως ρητό open item στην ενότητα 8.
