@@ -57,6 +57,8 @@
   .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,178,56,.38);}
   .btn.ghost{background:transparent;color:#fff;border:1px solid #3a4c76;box-shadow:none;margin-left:10px;}
   .btn.ghost:hover{border-color:#fff;}
+  .never{margin-top:22px;background:none;border:0;color:#8FA0C4;font:500 13px 'JetBrains Mono',monospace;text-decoration:underline;cursor:pointer;}
+  .never:hover{color:#fff;}
   .scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#8FA0C4;font:500 12px 'JetBrains Mono',monospace;z-index:2;}
   .scroll-cue span{display:block;width:1px;height:28px;background:linear-gradient(var(--amber),transparent);margin:6px auto 0;animation:drip 1.8s ease-in-out infinite;}
   @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -120,6 +122,12 @@
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/htm@3.1.1/dist/htm.js"></script>
 <script>
+/* Σημείωσε ότι το intro εμφανίστηκε σε αυτή τη συνεδρία, ώστε η αρχική να μην ξαναμεταφέρει εδώ */
+try { sessionStorage.setItem('intro_seen', '1'); } catch (e) {}
+function skipForever() {
+  document.cookie = 'skip_intro=1; max-age=31536000; path=/; SameSite=Lax';
+  location.href = 'index.html';
+}
 const { useState, useEffect, useRef } = React;
 const html = htm.bind(React.createElement);
 
@@ -210,6 +218,7 @@ function Hero() {
           <button className="btn" onClick=${() => go('how')}>Δες πώς δουλεύουμε ↓</button>
           <a className="btn ghost" href="index.html#contact">Επικοινωνία</a>
         </div>
+        <button className=${'never reveal ' + (phase >= 3 ? 'in' : '')} onClick=${skipForever}>Μην το ξαναδείξεις</button>
       </div>
       <div className="scroll-cue">scroll<span></span></div>
     </header>`;

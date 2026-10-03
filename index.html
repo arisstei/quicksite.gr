@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Intro gate: δείξε το intro.html εκτός αν ο χρήστης έχει επιλέξει "Μην το ξαναδείξεις" (cookie skip_intro)
+   ή το έχει ήδη δει σε αυτή τη συνεδρία. Τα bots δεν ανακατευθύνονται. */
+(function(){try{
+  if(/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent))return;
+  if(/(?:^|; )skip_intro=1/.test(document.cookie))return;
+  if(sessionStorage.getItem('intro_seen'))return;
+  location.replace('intro.html');
+}catch(e){}})();
+</script>
 <title>quicksite.gr — Το site σου, έτοιμο σε 24 ώρες</title>
 <meta name="description" content="Φτιάχνουμε επαγγελματικό website για την επιχείρησή σου μέσα σε 24 ώρες, βασισμένο στο Google Business Profile σου. Χωρίς κόπο, χωρίς πολύπλοκες πλατφόρμες.">
 <link rel="canonical" href="https://quicksite.gr/">
