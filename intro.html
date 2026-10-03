@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>quicksite.gr — Καλώς ήρθες</title>
+<meta name="description" content="Το website σου, σε ασφαλή χέρια. Δες πώς δουλεύουμε βήμα-βήμα, χωρίς εκπλήξεις.">
+<meta name="theme-color" content="#12213B">
+<link rel="canonical" href="https://quicksite.gr/intro.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7F5; --ink:#12213B; --cobalt:#2F5DE3; --cobalt-deep:#1E3FA8;
+    --amber:#FFB238; --night:#0E1626; --mint:#7CF29C; --text:#232B3B; --soft:#5C6474; --line:#DDE1DC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--text);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.12;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;
+    background:radial-gradient(1200px 700px at 50% 30%,#1B2F57 0%,var(--night) 65%);color:#fff;overflow:hidden;padding:80px 24px 60px;}
+  .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:float 14s ease-in-out infinite;pointer-events:none;}
+  .orb.a{width:380px;height:380px;background:var(--cobalt);top:-80px;left:-100px;}
+  .orb.b{width:300px;height:300px;background:var(--amber);bottom:-90px;right:-60px;opacity:.18;animation-delay:-6s;}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,30px)}}
+  .skip{position:absolute;top:18px;right:20px;font:500 13px 'JetBrains Mono',monospace;color:#B9C4DA;border:1px solid #2c3d63;
+    padding:8px 14px;border-radius:999px;background:transparent;cursor:pointer;transition:.2s;z-index:3;}
+  .skip:hover{color:#fff;border-color:var(--amber);}
+  .hero-inner{position:relative;z-index:2;max-width:720px;}
+
+  .shield{width:132px;height:132px;margin:0 auto 28px;position:relative;}
+  .shield svg{width:100%;height:100%;overflow:visible;}
+  .shield .outline{fill:rgba(47,93,227,.14);stroke:var(--amber);stroke-width:3;stroke-linejoin:round;
+    stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.4s cubic-bezier(.65,0,.35,1) .2s forwards, fillin .8s ease 1.4s forwards;}
+  .shield .tick{fill:none;stroke:var(--mint);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:60;stroke-dashoffset:60;animation:draw .6s ease 1.5s forwards;}
+  .shield .ring{position:absolute;inset:-14px;border-radius:50%;border:2px solid var(--amber);opacity:0;animation:pulse 2.6s ease-out 2.1s infinite;}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fillin{to{fill:rgba(47,93,227,.32)}}
+  @keyframes pulse{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+
+  .tag{font:500 13px 'JetBrains Mono',monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;min-height:20px;}
+  .hero h1{font-size:clamp(34px,6vw,60px);color:#fff;margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--amber);}
+  .hero p.lead{font-size:clamp(16px,2vw,19px);color:#C5CFE3;max-width:560px;margin:0 auto 32px;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font:600 16px 'Inter',sans-serif;padding:15px 28px;border-radius:12px;border:0;cursor:pointer;
+    background:var(--amber);color:var(--ink);transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(255,178,56,.25);}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,178,56,.38);}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid #3a4c76;box-shadow:none;margin-left:10px;}
+  .btn.ghost:hover{border-color:#fff;}
+  .scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#8FA0C4;font:500 12px 'JetBrains Mono',monospace;z-index:2;}
+  .scroll-cue span{display:block;width:1px;height:28px;background:linear-gradient(var(--amber),transparent);margin:6px auto 0;animation:drip 1.8s ease-in-out infinite;}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ---------- STATS ---------- */
+  .stats{background:var(--ink);color:#fff;padding:44px 0;}
+  .stats .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;text-align:center;}
+  .stat b{display:block;font:700 clamp(34px,5vw,48px) 'Space Grotesk',sans-serif;color:var(--amber);}
+  .stat span{font-size:14px;color:#B9C4DA;}
+
+  /* ---------- PROMISES ---------- */
+  section.block{padding:90px 0;}
+  .eyebrow{font:500 13px 'JetBrains Mono',monospace;color:var(--cobalt);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+  h2.title{font-size:clamp(28px,4vw,42px);color:var(--ink);margin-bottom:12px;}
+  .sub{color:var(--soft);max-width:560px;margin-bottom:44px;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .3s,box-shadow .3s,border-color .3s;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(18,33,59,.09);border-color:var(--cobalt);}
+  .ico{width:52px;height:52px;border-radius:14px;background:rgba(47,93,227,.1);display:grid;place-items:center;margin-bottom:18px;color:var(--cobalt);}
+  .ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .card h3{font-size:20px;color:var(--ink);margin-bottom:8px;}
+  .card p{font-size:15px;color:var(--soft);}
+  .cards .reveal:nth-child(2){transition-delay:.12s}
+  .cards .reveal:nth-child(3){transition-delay:.24s}
+  .cards .reveal:nth-child(4){transition-delay:.12s}
+  .cards .reveal:nth-child(5){transition-delay:.24s}
+  .cards .reveal:nth-child(6){transition-delay:.36s}
+
+  /* ---------- STEPS ---------- */
+  .steps-bg{background:#ECEEEA;}
+  .steps{position:relative;display:grid;gap:22px;max-width:720px;}
+  .steps::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:var(--line);}
+  .steps .fill{position:absolute;left:23px;top:8px;width:2px;background:var(--cobalt);height:0;transition:height 1.6s cubic-bezier(.4,0,.2,1);}
+  .steps.in .fill{height:calc(100% - 16px);}
+  .step{position:relative;display:flex;gap:20px;align-items:flex-start;}
+  .step .num{flex:none;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--cobalt);color:var(--cobalt);
+    font:700 17px 'JetBrains Mono',monospace;display:grid;place-items:center;z-index:1;}
+  .step h3{font-size:19px;color:var(--ink);margin:2px 0 4px;}
+  .step p{color:var(--soft);font-size:15px;}
+
+  /* ---------- CTA ---------- */
+  .cta{background:radial-gradient(900px 400px at 50% 0%,#1B2F57,var(--night));color:#fff;text-align:center;padding:90px 24px;}
+  .cta h2{font-size:clamp(28px,4.4vw,46px);margin-bottom:14px;color:#fff;}
+  .cta p{color:#C5CFE3;max-width:520px;margin:0 auto 30px;}
+  footer{background:var(--night);color:#6F7FA3;text-align:center;font-size:13px;padding:22px;border-top:1px solid #1d2b49;}
+
+  @media (max-width:560px){.btn.ghost{margin:12px 0 0}.skip{top:12px;right:12px}}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important;}
+    .shield .outline,.shield .tick{stroke-dashoffset:0}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<noscript><p style="padding:40px;text-align:center">Το περιεχόμενο χρειάζεται JavaScript. <a href="index.html" style="color:#2F5DE3">Πήγαινε στην αρχική</a>.</p></noscript>
+
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/htm@3.1.1/dist/htm.js"></script>
+<script>
+const { useState, useEffect, useRef } = React;
+const html = htm.bind(React.createElement);
+
+/* ---- hooks ---- */
+function useInView(opts) {
+  const ref = useRef(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { setSeen(true); return; }
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setSeen(true); io.disconnect(); }
+    }, opts || { threshold: 0.2 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, seen];
+}
+
+function useTyped(text, start, speed) {
+  const [out, setOut] = useState('');
+  useEffect(() => {
+    if (!start) return;
+    let i = 0, t;
+    const tick = () => { i++; setOut(text.slice(0, i)); if (i < text.length) t = setTimeout(tick, speed || 38); };
+    t = setTimeout(tick, 0);
+    return () => clearTimeout(t);
+  }, [start, text]);
+  return out;
+}
+
+function CountUp({ to, suffix, run }) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    if (!run) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { setN(to); return; }
+    let raf, t0;
+    const step = (t) => {
+      t0 = t0 || t;
+      const p = Math.min((t - t0) / 1400, 1);
+      setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [run]);
+  return html`<b>${n}${suffix || ''}</b>`;
+}
+
+function Reveal({ children, className, as }) {
+  const [ref, seen] = useInView();
+  const Tag = as || 'div';
+  return html`<${Tag} ref=${ref} className=${'reveal ' + (seen ? 'in ' : '') + (className || '')}>${children}<//>`;
+}
+
+/* ---- sections ---- */
+function Hero() {
+  const [phase, setPhase] = useState(0);
+  useEffect(() => {
+    const t1 = setTimeout(() => setPhase(1), 1900);
+    const t2 = setTimeout(() => setPhase(2), 2500);
+    const t3 = setTimeout(() => setPhase(3), 3100);
+    return () => [t1, t2, t3].forEach(clearTimeout);
+  }, []);
+  const tag = useTyped('// το site σου, σε ασφαλή χέρια', phase >= 1, 32);
+  const go = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+
+  return html`
+    <header className="hero">
+      <div className="orb a"></div><div className="orb b"></div>
+      <button className="skip" onClick=${() => (location.href = 'index.html')}>Παράλειψη →</button>
+      <div className="hero-inner">
+        <div className="shield" aria-hidden="true">
+          <div className="ring"></div>
+          <svg viewBox="0 0 100 110">
+            <path className="outline" d="M50 6 L90 22 V54 C90 80 72 98 50 105 C28 98 10 80 10 54 V22 Z"/>
+            <path className="tick" d="M32 55 L45 68 L70 40"/>
+          </svg>
+        </div>
+        <div className="tag">${tag}<span style=${{ opacity: phase >= 1 && tag.length < 30 ? 1 : 0 }}>▍</span></div>
+        <h1 className=${'reveal ' + (phase >= 2 ? 'in' : '')}>Όλα <em>υπό έλεγχο</em>,<br/>από την πρώτη μέρα.</h1>
+        <p className=${'lead reveal ' + (phase >= 3 ? 'in' : '')}>
+          Σου φτιάχνουμε το website της επιχείρησής σου με διαφάνεια, χωρίς κρυφές χρεώσεις και χωρίς πολύπλοκες διαδικασίες. Εσύ βλέπεις πρώτα, εσύ αποφασίζεις.
+        </p>
+        <div className=${'reveal ' + (phase >= 3 ? 'in' : '')}>
+          <button className="btn" onClick=${() => go('how')}>Δες πώς δουλεύουμε ↓</button>
+          <a className="btn ghost" href="index.html#contact">Επικοινωνία</a>
+        </div>
+      </div>
+      <div className="scroll-cue">scroll<span></span></div>
+    </header>`;
+}
+
+function Stats() {
+  const [ref, seen] = useInView({ threshold: 0.4 });
+  return html`
+    <div className="stats" ref=${ref}>
+      <div className="wrap grid">
+        <div className="stat"><${CountUp} to=${24} suffix="h" run=${seen}/><span>μέχρι το πρώτο σου demo</span></div>
+        <div className="stat"><${CountUp} to=${100} suffix="%" run=${seen}/><span>το site είναι δικό σου</span></div>
+        <div className="stat"><${CountUp} to=${0} suffix="€" run=${seen}/><span>πληρωμή πριν δεις το demo</span></div>
+      </div>
+    </div>`;
+}
+
+const I = {
+  eye:   html`<svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  lock:  html`<svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>`,
+  key:   html`<svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/></svg>`,
+  chat:  html`<svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.5 7.2L3 21l1.8-6.1A8 8 0 1121 12z"/></svg>`,
+  bolt:  html`<svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>`,
+  phone: html`<svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>`
+};
+
+const PROMISES = [
+  { i: 'eye',  t: 'Βλέπεις πριν αποφασίσεις', d: 'Πρώτα φτιάχνουμε το demo με βάση το Google Business Profile σου. Αν δεν σου αρέσει, δεν δεσμεύεσαι.' },
+  { i: 'lock', t: 'Ασφαλές από το πρώτο λεπτό', d: 'Το site σου τρέχει με HTTPS, ώστε οι πελάτες σου να το εμπιστεύονται όταν το επισκέπτονται.' },
+  { i: 'key',  t: 'Το site είναι δικό σου', d: 'Δεν σε κλειδώνουμε σε πλατφόρμα. Ξέρεις τι έχεις, πού βρίσκεται και πώς αλλάζει.' },
+  { i: 'chat', t: 'Άνθρωπος, όχι ticket', d: 'Μιλάς απευθείας μαζί μας, στα ελληνικά, για αλλαγές και απορίες.' },
+  { i: 'bolt', t: 'Γρήγορο και χωρίς κόπο', d: 'Δεν χρειάζεται να ξέρεις τεχνικά. Μας δίνεις τα βασικά και τα υπόλοιπα τα αναλαμβάνουμε.' },
+  { i: 'phone',t: 'Σωστό σε κινητό', d: 'Οι περισσότεροι πελάτες σε ψάχνουν από το κινητό. Το site σου φαίνεται τέλειο σε κάθε οθόνη.' }
+];
+
+function Promises() {
+  return html`
+    <section className="block"><div className="wrap">
+      <${Reveal}><div className="eyebrow">// γιατί να μας εμπιστευτείς</div>
+      <h2 className="title">Δεσμεύσεις, όχι υποσχέσεις.</h2>
+      <p className="sub">Έξι πράγματα που ισχύουν σε κάθε συνεργασία μας.</p><//>
+      <div className="cards">
+        ${PROMISES.map(p => html`
+          <${Reveal} key=${p.t} className="card">
+            <div className="ico">${I[p.i]}</div>
+            <h3>${p.t}</h3><p>${p.d}</p>
+          <//>`)}
+      </div>
+    </div></section>`;
+}
+
+const STEPS = [
+  ['Μας στέλνεις το όνομα της επιχείρησής σου', 'Αρκεί ο σύνδεσμος του Google Business Profile σου.'],
+  ['Φτιάχνουμε το demo', 'Μέσα σε 24 ώρες βλέπεις έτοιμο το site σου, χωρίς καμία χρέωση.'],
+  ['Το βλέπεις και μας λες τη γνώμη σου', 'Ζητάς όσες αλλαγές θέλεις. Αν δεν σου κάνει, σταματάμε εκεί.'],
+  ['Βγαίνει στον αέρα', 'Όταν είσαι ευχαριστημένος/η, το ανεβάζουμε στο domain σου.']
+];
+
+function Steps() {
+  const [ref, seen] = useInView({ threshold: 0.25 });
+  return html`
+    <section className="block steps-bg" id="how"><div className="wrap">
+      <${Reveal}><div className="eyebrow">// πώς δουλεύουμε</div>
+      <h2 className="title">Τέσσερα απλά βήματα.</h2>
+      <p className="sub">Ξέρεις πάντα σε ποιο σημείο βρισκόμαστε.</p><//>
+      <div className=${'steps ' + (seen ? 'in' : '')} ref=${ref}>
+        <div className="fill"></div>
+        ${STEPS.map((s, i) => html`
+          <${Reveal} key=${i} className="step">
+            <div className="num">0${i + 1}</div>
+            <div><h3>${s[0]}</h3><p>${s[1]}</p></div>
+          <//>`)}
+      </div>
+    </div></section>`;
+}
+
+function Cta() {
+  return html`
+    <section className="cta"><${Reveal}>
+      <h2>Έτοιμος/η να δεις το site σου;</h2>
+      <p>Χωρίς δέσμευση και χωρίς πληρωμή πριν δεις το αποτέλεσμα.</p>
+      <a className="btn" href="index.html#contact">Ζήτα το δωρεάν demo →</a>
+    <//></section>`;
+}
+
+function App() {
+  return html`<${React.Fragment}>
+    <${Hero}/><${Stats}/><${Promises}/><${Steps}/><${Cta}/>
+    <footer>© quicksite.gr · <a href="index.html" style=${{ textDecoration: 'underline' }}>Αρχική</a></footer>
+  <//>`;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(html`<${App}/>`);
+</script>
+</body>
+</html>
